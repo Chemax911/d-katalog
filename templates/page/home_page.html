@@ -1,0 +1,22 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_links %} 
+
+<title>The Test</title>
+
+{% endblock %}
+
+{% block head_title %}{% trans "Sign In" %} {% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        Hi {{ user }}!
+        <p><a href="/">Log Out</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="/">Log In</a> |
+        <a href="/">Sign Up</a>
+    {% endif %}
+{% endblock %}
